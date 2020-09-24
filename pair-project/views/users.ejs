@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <button><a href="/users/create">Create User</a></button>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(element =>{ %>
+                <tr>
+                    <td> <%= element.fullName %> </td>
+                    <td> <%= element.role %> </td>
+                    <td> <%= element.username %> </td>
+                    <td><a href="/users/edit/<%= element.id %>">Edit</a> || <a href="/users/delete/<%= element.id %>" onclick="return confirm('Are you sure?')">Delete</a>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <h1>Form User Input</h1>
+    <form action="/users/create" method="post">
+        <label for="">Full Name</label><br>
+        <input type="text", name="fullName"><br>
+        <label for="">Role</label><br>
+        <input type="text", name="role"><br>
+        <label for="">Username</label><br>
+        <input type="text", name="username"><br>
+        <label for="">Password</label><br>
+        <input type="password", name="password" id="myInput" minlength="8" ><br>
+        <input type="checkbox" onclick="myFunction()"><label>Show Password</label>
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+            </script>
+        <button type="submit">Save User</button>
+        <button> <a href="/users">Cancel</a></button>
+    </form>
+</body>
+</html>
